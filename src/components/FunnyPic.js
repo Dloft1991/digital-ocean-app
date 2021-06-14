@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import Grossmeme from "../pictures/Grossmeme.jpg";
+import Grossmeme from "../pictures/grossmeme.jpg";
+
 export const Fpic = () => {
   return (
     <div>
-      <Grossmeme />
+      <img src={Grossmeme}></img>
     </div>
   );
 };
