@@ -3,12 +3,13 @@ const bodyParser = require("body-parser");
 const app = express();
 const mysql = require("mysql");
 const cors = require("cors");
+require("dotenv").config();
 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "new_password",
-  database: "deployApp",
+  host: "process.env.host",
+  user: "process.env.user",
+  password: "process.env.password",
+  database: "process.env.database",
 });
 
 app.use(cors());
