@@ -9,7 +9,9 @@ function App() {
   const [newReview, setNewReview] = useState("");
 
   useEffect(() => {
-    Axios.get("https://10.244.55.79:8080/api/get").then((response) => {
+    Axios.get(
+      "https://digital-ocean-app-yj8tk.ondigitalocean.app/api/get"
+    ).then((response) => {
       setMovieList(response.data);
     });
   });
@@ -17,10 +19,13 @@ function App() {
   const submitReview = () => {
     console.log("CLICKED");
 
-    Axios.post("https://10.244.55.79:8080/api/insert", {
-      movieName: movieName,
-      movieReview: review,
-    }).then(() => {
+    Axios.post(
+      "https://digital-ocean-app-yj8tk.ondigitalocean.app/api/insert",
+      {
+        movieName: movieName,
+        movieReview: review,
+      }
+    ).then(() => {
       setMovieList([
         ...movieReviewList,
         { movieName: movieName, movieReview: review },
@@ -29,14 +34,19 @@ function App() {
   };
 
   const deleteReview = (movie) => {
-    Axios.delete(`https://10.244.55.79:8080/api/delete/${movie}`);
+    Axios.delete(
+      `https://digital-ocean-app-yj8tk.ondigitalocean.app//api/delete/${movie}`
+    );
   };
 
   const updateReview = (movie) => {
-    Axios.put("https://10.244.55.79:8080/api/update", {
-      movieName: movie,
-      movieReview: newReview,
-    });
+    Axios.put(
+      "https://digital-ocean-app-yj8tk.ondigitalocean.app//api/update",
+      {
+        movieName: movie,
+        movieReview: newReview,
+      }
+    );
     setNewReview("");
   };
 
