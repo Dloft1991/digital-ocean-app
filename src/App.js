@@ -9,7 +9,7 @@ function App() {
   const [newReview, setNewReview] = useState("");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/api/get").then((response) => {
+    Axios.get("http://10.244.55.79:8080/api/get").then((response) => {
       setMovieList(response.data);
     });
   });
@@ -17,7 +17,7 @@ function App() {
   const submitReview = () => {
     console.log("CLICKED");
 
-    Axios.post("http://localhost:3001/api/insert", {
+    Axios.post("http://10.244.55.79:8080/api/insert", {
       movieName: movieName,
       movieReview: review,
     }).then(() => {
@@ -29,11 +29,11 @@ function App() {
   };
 
   const deleteReview = (movie) => {
-    Axios.delete(`http://localhost:3001/api/delete/${movie}`);
+    Axios.delete(`http://10.244.55.79:8080/api/delete/${movie}`);
   };
 
   const updateReview = (movie) => {
-    Axios.put("http://localhost:3001/api/update", {
+    Axios.put("http://10.244.55.79:8080/api/update", {
       movieName: movie,
       movieReview: newReview,
     });
