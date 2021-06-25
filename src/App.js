@@ -82,7 +82,7 @@ function App() {
                   updateReview(val.movieName);
                 }}
               >
-                Update
+                Update Review
               </button>
             </div>
           );
