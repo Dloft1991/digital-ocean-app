@@ -35,18 +35,15 @@ function App() {
 
   const deleteReview = (movie) => {
     Axios.delete(
-      `https://digital-ocean-app-yj8tk.ondigitalocean.app//api/delete/${movie}`
+      `https://digital-ocean-app-yj8tk.ondigitalocean.app/api/delete/${movie}`
     );
   };
 
   const updateReview = (movie) => {
-    Axios.put(
-      "https://digital-ocean-app-yj8tk.ondigitalocean.app//api/update",
-      {
-        movieName: movie,
-        movieReview: newReview,
-      }
-    );
+    Axios.put("https://digital-ocean-app-yj8tk.ondigitalocean.app/api/update", {
+      movieName: movie,
+      movieReview: newReview,
+    });
     setNewReview("");
   };
 
@@ -92,7 +89,7 @@ function App() {
                   updateReview(val.movieName);
                 }}
               >
-                Update Review
+                Update
               </button>
             </div>
           );
